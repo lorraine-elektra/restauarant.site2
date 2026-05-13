@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#FAFAFA" />
+<meta name="robots" content="index,follow" />
+<title>Hajia's Kitchen — Authentic Ghanaian Cuisine, Osu Accra</title>
+<meta name="description" content="Hajia's Kitchen — authentic, home-style Ghanaian cooking in Osu, Accra. Jollof, Waakye, Fufu, Banku, Light Soup and more. Call to order; we confirm every order personally." />
+<link rel="canonical" href="https://hajiaskitchen.com/" />
+
+<!-- ===== Open Graph / Facebook / WhatsApp preview ===== -->
+<meta property="og:type"        content="restaurant" />
+<meta property="og:site_name"   content="Hajia's Kitchen" />
+<meta property="og:title"       content="Hajia's Kitchen — Authentic Ghanaian Cuisine, Osu Accra" />
+<meta property="og:description" content="Home-style Ghanaian cooking in Osu, Accra. Jollof, Waakye, Fufu, Banku, Light Soup and more — dine in or place an order; we'll call to confirm." />
+<meta property="og:image"       content="https://hajiaskitchen.com/logo.png" />
+<meta property="og:url"         content="https://hajiaskitchen.com/" />
+<meta property="og:locale"      content="en_GH" />
+
+<!-- ===== Twitter / X Card ===== -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content="Hajia's Kitchen — Authentic Ghanaian Cuisine, Osu Accra" />
+<meta name="twitter:description" content="Home-style Ghanaian cooking in Osu, Accra. We confirm every order personally." />
+<meta name="twitter:image"       content="https://hajiaskitchen.com/logo.png" />
+
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="kontomire.jfif" type="image/jpeg" imagesizes="(max-width: 768px) min(92vw, 720px), min(360px, 45vw)" />
+<link rel="preload" as="image" href="kenkey.jfif" type="image/jpeg" imagesizes="(max-width: 768px) min(92vw, 720px), min(360px, 45vw)" />
+
+<!-- ===== Structured data ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Hajia's Kitchen",
+  "image": "https://hajiaskitchen.com/logo.png",
+  "url": "https://hajiaskitchen.com/",
+  "telephone": "+233123456789",
+  "priceRange": "GH₵ 8 – GH₵ 65",
+  "servesCuisine": "Ghanaian",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 Oxford Street, Osu RE",
+    "addressLocality": "Accra",
+    "addressRegion": "Greater Accra Region",
+    "addressCountry": "GH"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday",   "opens": "10:00", "closes": "20:00" }
+  ]
+}
+</script>
+
+<style>
+  /* ---------- Reset & base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    /* Minimal zinc / charcoal — simple, host-friendly */
+    --bg:           #FAFAFA;
+    --surface:      #FFFFFF;
+    --ink:          #18181B;
+    --ink-muted:    #71717A;
+    --accent:       #27272A;
+    --accent-strong:#09090B;
+    --highlight:    #A16207;
+    --footer-hover: #E4E4E7;
+    --line:         #E4E4E7;
+    --error:        #DC2626;
+    --shadow:       0 12px 40px rgba(24, 24, 27, 0.08);
+    --radius:       10px;
+    --radius-sm:    6px;
+    --order-pulse:       rgba(249, 115, 22, 0.95);
+    --order-pulse-ring:  rgba(249, 115, 22, 0.55);
+    --order-pulse-glow:  rgba(249, 115, 22, 0.5);
+  }
+
+  @keyframes order-attn-pop {
+    0%, 100% {
+      box-shadow:
+        0 2px 14px rgba(0, 0, 0, 0.22),
+        0 0 0 0 var(--order-pulse-ring),
+        0 0 14px var(--order-pulse-glow);
+    }
+    50% {
+      box-shadow:
+        0 4px 22px rgba(0, 0, 0, 0.28),
+        0 0 0 7px rgba(249, 115, 22, 0.35),
+        0 0 26px var(--order-pulse-glow);
+    }
+  }
+
+  @keyframes order-float-attn-pop {
+    0%, 100% {
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.28),
+        0 0 0 2px var(--order-pulse),
+        0 0 18px var(--order-pulse-glow);
+    }
+    50% {
+      box-shadow:
+        0 12px 38px rgba(0, 0, 0, 0.32),
+        0 0 0 10px rgba(249, 115, 22, 0.4),
+        0 0 34px rgba(249, 115, 22, 0.65);
+    }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  /* Anchor offset under sticky nav */
+  section[id],
+  header[id] {
+    scroll-margin-top: 88px;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  h1, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--ink);
+    font-weight: 700;
+    line-height: 1.18;
+    margin: 0 0 0.6em;
+    letter-spacing: -0.005em;
+  }
+
+  /* H2 uses Roboto Mono per request */
+  h2 {
+    font-family: 'Roboto Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection { background: var(--accent-strong); color: #fff; }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #D4D4D8;
+    box-shadow: 0 4px 18px rgba(24, 24, 27, 0.09);
+    transition: padding 0.25s ease, box-shadow 0.25s ease;
+  }
+  .nav.shrunk {
+    box-shadow: 0 6px 22px rgba(24, 24, 27, 0.11);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    gap: 24px;
+  }
+  .nav.shrunk .nav-inner { padding: 8px 0; }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .logo-img {
+    height: 72px;
+    width: auto;
+    max-height: 72px;
+    object-fit: contain;
+    display: block;
+    /* Source PNG uses transparency (cream background removed) */
+    transition: max-height 0.25s ease, height 0.25s ease;
+  }
+  .nav.shrunk .logo-img {
+    height: 56px;
+    max-height: 56px;
+  }
+  .logo-text {
+    font-family: 'Kavoon', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active {
+    color: var(--accent);
+  }
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .order-btn {
+    background: var(--ink);
+    color: var(--surface);
+    border: 1px solid var(--ink);
+    padding: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .order-btn.nav-order-btn {
+    animation: order-attn-pop 2s ease-in-out infinite;
+  }
+  .order-btn.nav-order-btn:hover {
+    animation-play-state: paused;
+  }
+  .order-btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 30px 0 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 3.4rem;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+  .hero .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 1.25rem;
+    max-width: 580px;
+    margin: 0 auto 28px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .cta-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); transform: translateY(-1px); }
+
+  .cta-btn.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .cta-btn + .cta-btn {
+    margin-left: 8px;
+  }
+  .cta-btn.secondary:hover { background: var(--ink); color: #fff; }
+
+  .hero-photos {
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 720px;
+  }
+  .hero-photos .photo {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--line);
+    box-shadow: var(--shadow);
+  }
+  .hero-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .hero-photos .photo:hover img { transform: scale(1.02); }
+
+  .hero-info {
+    margin-top: 36px;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+  }
+  .hero-info a { color: var(--accent); font-weight: 600; }
+  .hero-info .dot { margin: 0 10px; color: var(--line); }
+
+  /* ---------- Tagline banner ---------- */
+  .tagline {
+    background: var(--ink);
+    color: var(--bg);
+    text-align: center;
+    padding: 28px 24px;
+  }
+  .tagline p {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Hours ---------- */
+  .hours {
+    padding: 35px 0;
+    text-align: center;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .hours h2 {
+    font-size: 2.2rem;
+  
+  }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 860px;
+    margin: 0 auto;
+    gap: 30px;
+    text-align: left;
+  }
+  .hours-col .day {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .hours-col .time {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    color: var(--ink-muted);
+  }
+  .hours-col.right { text-align: right; }
+  .separator {
+    width: 1px;
+    height: 80px;
+    background: var(--line);
+    margin: 0 auto;
+  }
+  .holiday-note {
+    margin-top: 36px;
+    color: var(--ink-muted);
+    font-size: 1rem;
+  }
+
+  /* ---------- About ---------- */
+  .about { padding: 45px 0; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .about-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 220px;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--line);
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--highlight);
+    font-weight: 500;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    margin-top:10px;
+  }
+  .eyebrow::before {
+    content: "🌿\00a0";
+    font-family: 'Inter', "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-right: 0.1em;
+  }
+  .eyebrow::after {
+    content: "\00a0✨";
+    font-family: 'Inter', "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.88em;
+    opacity: 0.9;
+  }
+  .about-text h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    color: var(--ink);
+    font-size: 1.02rem;
+    margin-bottom: 16px;
+  }
+  .about-ingredients {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .about-ingredients .ingredients-tagline {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  /* ---------- Menu ---------- */
+  .menu {
+    padding: 35px 0;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head { text-align: center; margin-bottom: 36px; }
+  .section-head h2 { font-size: 2.6rem; margin-bottom: 6px; }
+
+  .menu-price-note {
+    text-align: center;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    margin: -20px 0 44px;
+  }
+
+  .menu-group { margin-bottom: 52px; }
+  .menu-group:last-child { margin-bottom: 0; }
+  .menu-group h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 26px;
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .menu-group h3::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: var(--highlight);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  .menu-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 820px;
+  }
+  .menu-item {
+    display: flex;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .item-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1rem;
+    flex: 1;
+    padding-right: 12px;
+  }
+  .dots {
+    flex: 0 0 auto;
+    width: 60px;
+    border-bottom: 1px dotted var(--line);
+    margin: 0 12px;
+    transform: translateY(-4px);
+  }
+  .item-price {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .item-desc {
+    display: block;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin-top: 3px;
+    font-style: normal;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 2px 7px;
+    vertical-align: middle;
+    margin-left: 8px;
+    line-height: 1.6;
+  }
+  .badge-veg {
+    background: rgba(39, 39, 42, 0.08);
+    color: var(--accent-strong);
+  }
+  .badge-popular {
+    background: rgba(160, 99, 63, 0.12);
+    color: var(--highlight);
+  }
+  .badge-chef {
+    background: rgba(31, 36, 33, 0.08);
+    color: var(--ink);
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews { padding: 15px 0; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .review-card {
+    background: var(--surface);
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  .stars {
+    color: var(--highlight);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .review-quote {
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .review-author {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  .review-location {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact {
+    background: var(--surface);
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+  }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group label {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--ink);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    resize: vertical;
+    min-height: auto;
+  }
+  .form-group textarea { min-height: 130px; }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(39, 39, 42, 0.12);
+  }
+  .form-group .error {
+    color: var(--error);
+    font-size: 0.82rem;
+    margin-top: 6px;
+    display: none;
+  }
+  .form-group.invalid input,
+  .form-group.invalid textarea { border-color: var(--error); }
+  .form-group.invalid .error { display: block; }
+
+  .submit-btn {
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 14px 28px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    align-self: flex-start;
+  }
+  .submit-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .success-banner {
+    display: none;
+    background: rgba(39, 39, 42, 0.06);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 18px 20px;
+    border-radius: var(--radius-sm);
+    margin-top: 6px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .success-banner.show { display: block; }
+
+  .form-submit-error {
+    display: none;
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.35);
+    color: var(--accent-strong);
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    margin-top: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .form-submit-error.show { display: block; }
+
+  /* Honeypot — leave hidden (spam bots) */
+  .hp-field {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+  }
+
+  .contact-phone-link {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .form-disclaimer {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    margin: -4px 0 0;
+    line-height: 1.55;
+  }
+  .contact-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .contact-info p { color: var(--ink); margin: 6px 0; }
+  .contact-info .info-label {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    color: var(--highlight);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    margin-top: 18px;
+    display: block;
+  }
+
+  /* Action links */
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 4px;
+  }
+  .action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+  }
+  .action-link:hover {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+  .action-link.wa:hover { background: #25D366; color: #fff; border-color: #25D366; }
+  .action-link svg { flex-shrink: 0; }
+
+  /* Map */
+  .map-box {
+    margin-top: 22px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    height: 220px;
+    background: var(--line);
+  }
+  .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  .note {
+    margin-top: 18px;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 15px 0 15px;
+  }
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-logo-img {
+    height: 80px;
+    width: auto;
+    max-height: 80px;
+    object-fit: contain;
+    display: block;
+    opacity: 1;
+  }
+  .footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
+  }
+  .footer-nav a {
+    color: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, color 0.2s ease;
+  }
+  .footer-nav a:hover { opacity: 1; color: var(--footer-hover); }
+
+  .footer-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(244, 244, 245, 0.22);
+    border: none;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 24px;
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+  .footer-info a {
+    color: inherit;
+    text-underline-offset: 3px;
+  }
+  .footer-info a:hover { color: var(--footer-hover); opacity: 1; }
+
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .footer-social a:hover {
+    background: var(--bg);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom {
+    font-size: 0.78rem;
+    opacity: 0.5;
+    margin: 0;
+  }
+  .footer-bottom a { color: var(--bg); }
+  .footer-bottom a:hover { color: var(--footer-hover); opacity: 1; }
+
+  /* ---------- Floating order button ---------- */
+  .float-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 13px 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.4px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    z-index: 90;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    animation: order-float-attn-pop 2s ease-in-out infinite;
+  }
+  .float-btn:hover {
+    background: var(--accent);
+    transform: scale(1.04);
+    animation-play-state: paused;
+  }
+  .float-btn:focus-visible {
+    outline: 3px solid var(--highlight);
+    outline-offset: 3px;
+  }
+  .float-btn.hidden { opacity: 0; pointer-events: none; transform: translateY(20px); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .about-img { min-height: 260px; max-height: 360px; }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero h1 { font-size: 2.6rem; }
+  }
+
+  @media (max-width: 768px) {
+    body { font-size: 16px; }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open { max-height: 500px; padding: 8px 0; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 14px 0; }
+    .nav-links a.active::after { display: none; }
+
+    .hamburger { display: block; }
+    .nav-order-btn { display: none; }
+
+    .logo-img { height: 56px; max-height: 56px; }
+    .nav.shrunk .logo-img { height: 48px; max-height: 48px; }
+    .nav-inner { gap: 14px; }
+    .logo { gap: 8px; min-width: 0; }
+    .logo-text { font-size: 1rem; }
+
+    .hero { padding: 60px 0 50px; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero .subtitle { font-size: 1.05rem; }
+    .hero-photos {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+      margin-top: 36px;
+    }
+
+    .hero-photos .photo:nth-child(2) {
+      display: none;
+    }
+    .cta-btn + .cta-btn { margin-left: 0; margin-top: 10px; }
+
+    .tagline p { font-size: 0.85rem; letter-spacing: 2px; }
+
+    .hours-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 6px;
+    }
+    .hours-col.right { text-align: center; }
+    .separator { width: 60px; height: 1px; }
+
+    .section-head h2 { font-size: 1.9rem; }
+    .menu-group h3 { font-size: 1.2rem; }
+
+    .reviews-grid { grid-template-columns: 1fr; }
+
+    .about-text h2 { font-size: 1.8rem; }
+
+    .float-btn {
+      right: 14px;
+      bottom: 88px;
+      padding: 11px 18px;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 1.85rem; }
+    .menu-item { flex-wrap: wrap; }
+    .dots { display: none; }
+    .item-price { margin-left: auto; }
+    .cta-btn { display: block; width: 100%; margin: 8px 0 0; }
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    .nav, .float-btn, .contact-form, .map-box, .footer-social { display: none !important; }
+    body { background: #fff; }
+  }
+
+  /* ---------- Motion preference ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" aria-label="Hajia's Kitchen — Home">
+      <img src="logo.png" alt="Hajia's Kitchen logo" class="logo-img" width="72" height="72" />
+      <span class="logo-text">Hajia's Kitchen</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#reviews" class="nav-link">Reviews</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <button class="order-btn nav-order-btn" data-scroll="#contact" type="button">Order</button>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" type="button">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-eyebrow">Authentic Ghanaian Kitchen — Est. 2009</div>
+    <h1>Home-cooked Ghana,<br>in the heart of Osu.</h1>
+    <p class="subtitle">Jollof, Waakye, Fufu, Banku, Light Soup; slow-cooked, the way Hajia learned it from her grandmother.</p>
+
+    <div>
+      <a class="cta-btn secondary" href="#menu" data-scroll="#menu">View menu</a>
+       <a class="cta-btn secondary" href="#contact" data-scroll="#contact">Place an order</a>
+    
+    </div>
+
+    <div class="hero-photos">
+      <div class="photo">
+        <img src="okro-soup2.jpg"
+             alt="Bowl of Ghanaian kontomire (palava sauce) with smoked fish"
+             loading="eager" decoding="async" fetchpriority="high"
+             sizes="(max-width: 768px) min(92vw, 720px), min(360px, 45vw)"
+             width="900" height="1125" />
+      </div>
+      <div class="photo">
+        <img src="c1.jpg"
+             alt="Ga kenkey with pepper sauce and fried fish, wrapped in corn husks"
+             loading="eager" decoding="async" fetchpriority="high"
+             sizes="(max-width: 768px) min(92vw, 720px), min(360px, 45vw)"
+             width="900" height="1125" />
+      </div>
+    </div>
+
+    <div class="hero-info">
+      14 Oxford Street, Osu RE, Accra <span class="dot">·</span>
+      <a href="tel:+233123456789">+233 12 345 6789</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TAGLINE BANNER ===== -->
+<section class="tagline">
+  <p>Eat well · Live well · The Ghanaian way</p>
+</section>
+
+<!-- ===== HOURS ===== -->
+<section class="hours" aria-label="Opening hours">
+  <div class="container">
+    <h2>Hours</h2>
+    <div class="hours-grid">
+      <div class="hours-col left">
+        <div class="day">Monday – Friday</div>
+        <div class="time">8:00 am – 9:00 pm</div>
+        <div class="day">Saturday</div>
+        <div class="time">8:00 am – 10:00 pm</div>
+      </div>
+      <div class="separator" aria-hidden="true"></div>
+      <div class="hours-col right">
+        <div class="day">Sunday</div>
+        <div class="time">10:00 am – 8:00 pm</div>
+        <div class="day">Walk-ins welcome</div>
+        <div class="time">Group orders accepted</div>
+      </div>
+    </div>
+    <p class="holiday-note">Closed on public holidays.</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photos">
+        <img class="about-img"
+             src="c2.jpg"
+             alt="Fresh okro soup with fish and meat, slow-simmered the home-style way"
+             loading="lazy" decoding="async" sizes="(max-width: 960px) 100vw, 45vw" width="1200" height="900" />
+        <img class="about-img"
+             src="okro-soup2.jpg"
+             alt="Tuo Zaafi with ayoyo soup — a Northern Ghanaian staple"
+             loading="lazy" decoding="async" sizes="(max-width: 960px) 100vw, 45vw" width="1200" height="900" />
+      </div>
+      <div class="about-text">
+        <div class="eyebrow">Our Story</div>
+        <h2>A kitchen built on patience &amp; family.</h2>
+        <p>Hajia's Kitchen was founded in 2009 by Hajia Amina, a mother of six from Tamale who learned to cook from her grandmother in the Northern tradition. What started as a small chop bar has grown into one of Accra's most beloved restaurants, now in the heart of Osu.</p>
+        <p>Every dish is made fresh daily — no shortcuts, no preservatives, just honest, soulful Ghanaian cooking. We believe food is family, and at Hajia's Kitchen, every customer is family.</p>
+        <div class="about-ingredients">
+          <div class="eyebrow">Our Ingredients</div>
+          <p class="ingredients-tagline">Fresh. Local. Honest.</p>
+          <p>At Hajia's Kitchen, we source our ingredients daily from trusted Ghanaian farmers and local markets. Every vegetable, spice, and grain is carefully chosen for freshness and quality.</p>
+          <p>We believe great food starts with real ingredients — which is why we avoid preservatives and use only what is fresh, natural, and locally grown.</p>
+          <p>From market to kitchen, everything is prepared with care, keeping the true taste of Ghana alive in every dish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Made Fresh Daily</div>
+      <h2>The Menu</h2>
+    </div>
+    <p class="menu-price-note">All prices are dine-in. Delivery prices may vary.</p>
+
+    <div class="menu-group">
+      <h3>Soups &amp; Stews</h3>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="item-name">Light Soup – Goat Meat<span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Spicy clear Ghanaian pepper soup cooked with goat meat and local herbs</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 55</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Groundnut Soup (Nkate Nkwan) – Chicken<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Creamy peanut soup cooked with tender chicken</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 60</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Palm Nut Soup (Abenkwan) – Tilapia<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Traditional palm fruit soup served with grilled tilapia</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 65</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Kontomire Stew (Palava Sauce) – Egg &amp; Smoked Fish<span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Cocoyam leaves stew cooked with eggs and smoked fish in palm oil</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 45</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Tomato Stew – Fried Fish
+            <span class="item-desc">Classic Ghanaian tomato stew served with crispy fried fish</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 50</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-group">
+      <h3>Rice &amp; Swallows</h3>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="item-name">Ghana Jollof Rice – Chicken<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Smoky wood-fired jollof rice served with chicken</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 40</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Waakye – Full Set<span class="badge badge-popular">Popular</span><span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Rice and beans served with spaghetti, gari, egg, salad, shito, and stew</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 50</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fried Rice – Chicken
+            <span class="item-desc">Ghana-style fried rice with vegetables and grilled chicken</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 55</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Banku – Grilled Tilapia<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Fermented corn and cassava dough served with grilled tilapia and pepper sauce</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 65</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fufu – Soup of Choice<span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Pounded cassava and plantain served with light, groundnut, or palm nut soup</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 60</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Tuo Zaafi (TZ) – Ayoyo Soup
+            <span class="item-desc">Northern Ghana staple served with jute leaf soup and protein</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 50</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Rice Balls (Omotuo) – Groundnut Soup
+            <span class="item-desc">Soft rice balls served in rich peanut soup</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 55</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-group">
+      <h3>Sides &amp; Snacks</h3>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="item-name">Kelewele – Spicy Fried Plantain<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Spiced ripe plantain cubes with ginger, chili, and cloves</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 20</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Boiled Yam – Kontomire Stew<span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Soft boiled yam served with kontomire sauce</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 30</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fried Yam – Pepper Sauce<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Crispy fried yam served with spicy tomato-pepper sauce</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 25</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Koose (Bean Cakes) – 4 Pieces<span class="badge badge-popular">Popular</span>
+            <span class="item-desc">Golden fried black-eyed pea fritters</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 15</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Kosua Ne Meko – Spicy Boiled Egg<span class="badge badge-chef">Chef's pick</span>
+            <span class="item-desc">Boiled eggs served with spicy Ghanaian pepper sauce</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 8</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Extra Protein – Meat or Fish
+            <span class="item-desc">Additional portion of chicken, beef, goat, or fish</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 25</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-group">
+      <h3>Drinks</h3>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="item-name">Sobolo – Hibiscus Ginger Drink
+            <span class="item-desc">Chilled hibiscus drink infused with ginger and spices</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 15</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Asaana – Fermented Corn Drink
+            <span class="item-desc">Traditional sweet caramelised corn drink served chilled</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 12</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fresh Coconut Water
+            <span class="item-desc">Natural coconut water served fresh</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 20</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Malt Drink – Malta / Alvaro</span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 18</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Bottled Water</span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 8</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-group">
+      <h3>Desserts</h3>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <span class="item-name">Bofrot – 5 Pieces
+            <span class="item-desc">Soft fried Ghanaian dough balls lightly sweetened</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 20</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Chin Chin
+            <span class="item-desc">Crunchy fried sweet dough bites</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 15</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Nkatie Cake (Groundnut Brittle)
+            <span class="item-desc">Crunchy caramelised peanut candy</span>
+          </span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="item-price">GH₵ 10</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What Guests Say</div>
+      <h2>Reviews</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <span class="sr-only">5 out of 5 stars</span>
+        <p class="review-quote">"The Waakye here is the best in Accra. Reminds me of my grandmother's cooking. Always fresh, always generous portions."</p>
+        <div class="review-author">Kwame A.</div>
+        <div class="review-location">Osu</div>
+      </article>
+
+      <article class="review-card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <span class="sr-only">5 out of 5 stars</span>
+        <p class="review-quote">"Hajia's Light Soup cured my cold. I'm not joking. This place is medicine and food in one."</p>
+        <div class="review-author">Abena M.</div>
+        <div class="review-location">Cantonments</div>
+      </article>
+
+      <article class="review-card">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <span class="sr-only">5 out of 5 stars</span>
+        <p class="review-quote">"We ordered for our office — 30 people. Everything was on time, hot, and absolutely delicious. Will always return."</p>
+        <div class="review-author">Ibrahim S.</div>
+        <div class="review-location">Labone</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Place an Order</div>
+      <h2>Contact &amp; Order</h2>
+    </div>
+
+    <div class="contact-grid">
+      <!--
+        Production: set data-form-endpoint to your Formspree form URL so submissions are emailed.
+        Sign up at https://formspree.io — one line, no backend. Example:
+        data-form-endpoint="https://formspree.io/f/abcdefgh"
+      -->
+      <form class="contact-form" id="orderForm"
+            data-form-endpoint=""
+            novalidate
+            aria-label="Order form">
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-group" id="g-name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+          <div class="error" id="e-name" role="alert">Please enter your name.</div>
+        </div>
+
+        <div class="form-group" id="g-phone">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. +233 12 345 6789" required />
+          <div class="error" id="e-phone" role="alert">Please enter a valid phone number we can call.</div>
+        </div>
+
+        <div class="form-group" id="g-message">
+          <label for="message">Order description</label>
+          <textarea id="message" name="message" rows="6" placeholder="Items, quantities, pickup or delivery address, and preferred time." required></textarea>
+          <div class="error" id="e-message" role="alert">Please describe your order so we can confirm it with you.</div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit order</button>
+
+        <p class="form-disclaimer" id="formDisclaimer">No payment is taken online. We will call you to confirm before anything is prepared.</p>
+
+        <div class="success-banner" id="successBanner" role="status" aria-live="polite" tabindex="-1">
+          Thank you! The restaurant will call you shortly to confirm your order. Your order will not be prepared until confirmation is completed.
+        </div>
+        <div class="form-submit-error" id="formSubmitError" role="alert" aria-live="assertive"></div>
+      </form>
+
+      <aside class="contact-info">
+        <h3>Find Hajia's Kitchen</h3>
+
+        <span class="info-label">Address</span>
+        <p>14 Oxford Street, Osu RE,<br>Accra, Greater Accra Region, Ghana</p>
+
+        <div class="contact-actions" role="list">
+          <a class="action-link"
+             href="https://maps.google.com/?q=14+Oxford+Street,+Osu+RE,+Accra,+Ghana"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open in Google Maps" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Google Maps
+          </a>
+          <a class="action-link"
+             href="https://maps.apple.com/?q=14+Oxford+Street,+Osu+RE,+Accra,+Ghana"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open in Apple Maps" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Apple Maps
+          </a>
+          <a class="action-link"
+             href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=14%20Oxford%20Street%2C%20Osu%20RE%2C%20Accra%2C%20Ghana&dropoff[nickname]=Hajia%27s%20Kitchen"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Get an Uber to Hajia's Kitchen" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+            Uber
+          </a>
+        </div>
+
+        <span class="info-label">Phone</span>
+        <p><a href="tel:+233123456789" class="contact-phone-link">+233 12 345 6789</a></p>
+
+        <div class="contact-actions" role="list">
+          <a class="action-link" href="tel:+233123456789" aria-label="Call Hajia's Kitchen" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Call
+          </a>
+          <a class="action-link" href="sms:+233123456789" aria-label="Text Hajia's Kitchen" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            SMS
+          </a>
+          <a class="action-link wa"
+             href="https://wa.me/233123456789?text=Hi%20Hajia%27s%20Kitchen!%20I%27d%20like%20to%20place%20an%20order."
+             target="_blank" rel="noopener noreferrer"
+             aria-label="WhatsApp Hajia's Kitchen" role="listitem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L.057 23.926l6.218-1.432A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.032-1.386l-.36-.214-3.732.859.924-3.617-.235-.372A9.799 9.799 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <span class="info-label">Hours</span>
+        <p>Mon – Fri: 8:00 am – 9:00 pm<br>
+           Saturday: 8:00 am – 10:00 pm<br>
+           Sunday: 10:00 am – 8:00 pm</p>
+
+        <p class="note">We accept walk-ins. Group bookings require 24 hours notice. Every order is confirmed personally by phone before preparation.</p>
+
+        <div class="map-box">
+          <iframe
+            src="https://maps.google.com/maps?q=14+Oxford+Street,+Osu+RE,+Accra,+Ghana&output=embed&z=16"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hajia's Kitchen on Google Maps — 14 Oxford Street, Osu RE, Accra">
+          </iframe>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+  
+    <ul class="footer-nav" aria-label="Footer">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-info">
+      <span><a href="https://maps.google.com/?q=14+Oxford+Street,+Osu+RE,+Accra,+Ghana" target="_blank" rel="noopener noreferrer">14 Oxford Street, Osu RE, Accra</a></span>
+      <span><a href="tel:+233123456789">+233 12 345 6789</a></span>
+    </div>
+
+    <div class="footer-social" aria-label="Social links">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://wa.me/233123456789" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L.057 23.926l6.218-1.432A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.032-1.386l-.36-.214-3.732.859.924-3.617-.235-.372A9.799 9.799 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+    </div>
+
+    <p class="footer-bottom">
+      &copy; <span id="year"></span> <a href="#home">Hajia's Kitchen</a> &nbsp;·&nbsp; All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- ===== FLOATING ORDER BUTTON ===== -->
+<button class="float-btn" id="floatBtn" data-scroll="#contact" type="button">Order now</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Year in footer ---------- */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Smooth scroll helper ---------- */
+  function smoothScrollTo(targetSelector) {
+    const el = document.querySelector(targetSelector);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const href = link.getAttribute('href');
+      if (href && href.length > 1 && document.querySelector(href)) {
+        e.preventDefault();
+        smoothScrollTo(href);
+        closeMobileMenu();
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-scroll]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      smoothScrollTo(btn.getAttribute('data-scroll'));
+    });
+  });
+
+  /* ---------- Sticky nav shrink + active link + hide float when contact in view ---------- */
+  const nav = document.getElementById('nav');
+  const contact = document.getElementById('contact');
+  const floatBtn = document.getElementById('floatBtn');
+
+  function handleScroll() {
+    if (window.scrollY > 60) nav.classList.add('shrunk');
+    else nav.classList.remove('shrunk');
+
+    updateActiveLink();
+    updateFloatBtn();
+  }
+
+  let rafPending = false;
+  window.addEventListener('scroll', function () {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(function () {
+      handleScroll();
+      rafPending = false;
+    });
+  }, { passive: true });
+
+  const sections = ['home', 'about', 'menu', 'reviews', 'contact'];
+  function updateActiveLink() {
+    const scrollPos = window.scrollY + nav.offsetHeight + 80;
+    let current = sections[0];
+    sections.forEach(function (id) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollPos) current = id;
+    });
+    document.querySelectorAll('.nav-link').forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  function updateFloatBtn() {
+    if (!contact || !floatBtn) return;
+    const rect = contact.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    floatBtn.classList.toggle('hidden', inView);
+  }
+
+  updateActiveLink();
+  updateFloatBtn();
+
+  /* ---------- Mobile hamburger ---------- */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', function () {
+    const open = hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  /* ---------- Order form ---------- */
+  /**
+   * Optional: set data-form-endpoint on #orderForm to a Formspree URL so submissions
+   * are emailed to you. If empty, the form still validates and shows the thank-you message
+   * (useful for demos); configure before going live.
+   */
+  const form = document.getElementById('orderForm');
+  const banner = document.getElementById('successBanner');
+  const submitErr = document.getElementById('formSubmitError');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function setInvalid(groupId, isInvalid) {
+    const group = document.getElementById(groupId);
+    if (!group) return;
+    group.classList.toggle('invalid', isInvalid);
+  }
+
+  function validatePhone(v) {
+    const digits = v.replace(/\D/g, '');
+    return digits.length >= 7 && /^[+\d][\d\s\-()]{6,}$/.test(v);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    banner.classList.remove('show');
+    if (submitErr) {
+      submitErr.classList.remove('show');
+      submitErr.textContent = '';
+    }
+
+    const name    = document.getElementById('name').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const nameOk    = name.length > 0;
+    const phoneOk   = validatePhone(phone);
+    const messageOk = message.length > 0;
+
+    setInvalid('g-name',    !nameOk);
+    setInvalid('g-phone',   !phoneOk);
+    setInvalid('g-message', !messageOk);
+
+    if (!(nameOk && phoneOk && messageOk)) {
+      const firstInvalid = document.querySelector('.form-group.invalid input, .form-group.invalid textarea');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    const endpoint = (form.getAttribute('data-form-endpoint') || '').trim();
+
+    function showThankYou() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit order';
+      banner.classList.add('show');
+      if (typeof banner.focus === 'function') banner.focus({ preventScroll: true });
+      form.reset();
+    }
+
+    if (!endpoint) {
+      showThankYou();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const payload = {
+      name: name,
+      phone: phone,
+      message: message,
+      _subject: "Website order — Hajia's Kitchen (call to confirm)"
+    };
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Form service returned an error.');
+        showThankYou();
+      })
+      .catch(function () {
+        if (submitErr) {
+          submitErr.textContent = 'We could not send your order just now. Please call or WhatsApp us — your details were not received.';
+          submitErr.classList.add('show');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit order';
+      });
+  });
+
+  ['name', 'phone', 'message'].forEach(function (id) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    input.addEventListener('input', function () {
+      const group = document.getElementById('g-' + id);
+      if (group && input.value.trim().length > 0) group.classList.remove('invalid');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
